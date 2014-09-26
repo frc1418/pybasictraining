@@ -41,11 +41,11 @@ However, running all the challenges can be a bit confusing and give you a lot
 of errors that you don't care about when concentrating on beating the current
 challenge. To run a single challenge, do this instead:
 
-	./run_single.sh CHALLENGE_NUMBER
+	./run_single.sh CHALLENGE
 	
-So for example, to run challenge #3, you would do this:
+So for example, to run challenge `v1`, you would do this:
 
-	./run_single.sh 3
+	./run_single.sh v1
 
 
 Should be simple enough!
@@ -53,29 +53,64 @@ Should be simple enough!
 The challenges
 ==============
 
+Please keep in mind that there are generally many different ways you can get
+the challenge tests to pass, but typically each test is a simple step that
+builds upon the knowledge/things done in previous tests. You are encouraged
+to complete the tests in order.
+
+Starting out
+------------
+
+* s1 - Create a file called `mycode.py` in the `src` directory
+
 Variables
 ---------
 
-1. Create a file called `mycode.py` in the `src` directory
-2. Define a variable named `x`, and make it equal to the number `3`
+* v1 - Define a variable named `x`, and make it equal to the number `3`
+* v2 - Define a variable named `s`, and make it a string that says `I am a string`
+* v3 - Define a variable named `b`, and make it equal to the boolean false value
 
-Functions
----------
+Functions & logic
+-----------------
 
-3. Define a function called `do_something`
-4. `do_something` should take two parameters, `x1` and `x2`
-5. `do_something` should have a docstring that says "This does something"
-6. `do_something` should return the result of `x1` times `x2`
+* f1 - Define a function called `do_something`
+* f2 - `do_something` should take two parameters, `x1` and `x2`
+* f3 - `do_something` should have a docstring that says "This does something"
+* f4 - `do_something` should return the result of `x1` times `x2`
 
-7. Define a function called `return_things`
+* f5 - Define a function called `keyword_fn`, it should take a keyword argument
+  called `keyword`. The value of the keyword argument should be `None`
+* f6 - If `keyword` is None, then `keyword_fn` should return the string 'No'.
+  Otherwise, it should return the keyword argument plus `2`
+
+* f7 - Define a function called `return_many`, it should take three parameters
+* f8 - `return_many` should add '2' to each of the parameters, and return the
+  three parameters as a tuple
+* f9 - Call `return_many` with the parameters 1, 2, and 3, and assign the
+  returned values to the variables r1, r2, and r3
 
 Modules
 -------
+
+* m1 - Import the library called `some_library`
+* m2 - Call the `i_am_a_teapot` function inside of `some_library`, store its
+  return value in a variable called `teapot`
+* m3 - Define a function called `gonna_call_stuff`, and have it take a
+  single parameter
+* m4 - From the `gonna_call_stuff` function, call the `multiply_by_2` function
+  in the `some_library` library with the first parameter equal to the first
+  parameter of the `gonna_call_stuff` function, and return the value returned by
+  `multiply_by_2`
    
-Objects
--------
+Classes & objects
+-----------------
 
+TODO
 
+Exceptions
+----------
+
+TODO
 
    
 If you're having problems
