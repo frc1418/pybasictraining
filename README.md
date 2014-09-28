@@ -5,8 +5,8 @@ This is a repository that we'll use as a tool to teach you python. This is an
 interactive learning experiment that gives you a number of challenges to
 beat. To pass the challenges you will need to write python code.
 
-Preparing to take the challenges
-================================
+Preparation
+===========
 
 You need to have the following things installed:
 
