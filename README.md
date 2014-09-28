@@ -3,10 +3,10 @@ pybasictraining
 
 This is a repository that we'll use as a tool to teach you python. This is an
 interactive learning experiment that gives you a number of challenges to
-beat, and you need to write python code to pass each challenge.
+beat. To pass the challenges you will need to write python code.
 
-Starting out
-============
+Preparing to take the challenges
+================================
 
 You need to have the following things installed:
 
@@ -20,10 +20,23 @@ point I might add Windows support too.
 Get the code
 ------------
 
-First, you need to clone this repository somewhere. You can use eclipse to
-do this, or open up a terminal and run the following:
+You need to clone this git repository somewhere on your computer. You can use
+eclipse to do this, or open up a terminal and run the following:
 
 	git clone https://github.com/frc1418/pybasictraining.git
+
+About the challenges
+--------------------
+
+In [the challenges](#the-challenges) section, each bullet point is a challenge you must complete.
+The name of the challenge is listed first, followed by the description of
+the challenge.
+
+Please keep in mind that there are generally many different ways you can get
+the challenge tests to pass, but typically each test is a simple step that
+builds upon the knowledge/things done in previous tests. You are encouraged
+to complete the tests in order.
+
 
 Testing to see if you beat the challenges
 -----------------------------------------
@@ -50,16 +63,11 @@ So for example, to run challenge `v1`, you would do this:
 
 Should be simple enough!
 
-The challenges
+The Challenges
 ==============
 
-Please keep in mind that there are generally many different ways you can get
-the challenge tests to pass, but typically each test is a simple step that
-builds upon the knowledge/things done in previous tests. You are encouraged
-to complete the tests in order.
-
-Starting out
-------------
+Creating files
+--------------
 
 * s1 - Create a file called `mycode.py` in the `src` directory
 
