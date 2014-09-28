@@ -12,4 +12,4 @@ TESTNAME=test_challenges.py::test_$1
 shift
 
 cd `dirname $0`/tests/
-PYTHONPATH="../src" python3 -m pytest $@ $TESTNAME
+PYTHONPATH="../src" python3 -m pytest -l $@ $TESTNAME

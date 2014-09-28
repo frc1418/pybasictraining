@@ -113,7 +113,61 @@ Modules
 Classes & objects
 -----------------
 
+* c1 - define your own class
+* c3 - add a constructor to your class
+* c - in the constructor, 
+* cX - add a method to your class, must return None
+* c4 - add an attribute to your class
+* c5 - do something with the attribute inside a method
+* c6 - access the same attribute from outside the class
+
+
+* c2 - create an instance of your class
+* 
+
+concepts I'm trying to communicate here:
+- What the self variable is
+- Calling functions on an object
+- Creating multiple instances of an object, and their 'self'
+  are different.. 
+
+
 TODO
+
+Tuples
+------
+
+* t1 - Define a variable 't1', and make it equal to an empty tuple
+* t2 - Define a variable 't2', and make it equal to a tuple with the values
+  'foo', 1, and False in it (in that order).
+* t3 - Define a variable 't3', and make it equal to the second element
+
+* t4 - Define a function called `measure_tuple`, that takes a single parameter
+* t5 - `measure_tuple` should return the number of elements present in the
+  tuple
+  
+* t6 - Define a function called `sum_tuple`, that takes a single parameter
+* t7 - In `sum_tuple`, the parameter is a tuple. If there are 5 elements in
+  the tuple, return the sum of the elements in the tuple. Otherwise, return None.
+
+
+Lists
+-----
+
+TODO
+
+Dictionaries
+------------
+
+- Create a variable d1 as an empty dictionary
+- Create a variable d2 as an empty dictionary
+- Add the
+- Add a tuple
+
+- define a function that takes a single parameter.
+- The parameter is a dictionary. if the dictionary has the
+  key 'stuff' in it, return the value associated with the key.
+  Otherwise, return None.
 
 Exceptions
 ----------
