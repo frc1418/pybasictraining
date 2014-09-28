@@ -3,7 +3,7 @@ pybasictraining
 
 This is a repository that we'll use as a tool to teach you python. This is an
 interactive learning experiment that gives you a number of challenges to
-beat, and you need to write python code that will allow the tests to succeed.
+beat, and you need to write python code to pass each challenge.
 
 Starting out
 ============
@@ -28,8 +28,8 @@ do this, or open up a terminal and run the following:
 Testing to see if you beat the challenges
 -----------------------------------------
 
-The challenges currently need to be ran from the terminal. This means you
-need to open up a terminal, and change directories to wherever you checked
+The challenges currently need to be run in the terminal. This means you
+need to open up a terminal and change directories to wherever you checked
 out the code. For help using the terminal, see [this resource](http://team1418.org/wiki/CommandLinePrimer).
 
 There are two ways to run the challenges. If you think your code can beat ALL
