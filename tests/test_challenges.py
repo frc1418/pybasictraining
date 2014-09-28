@@ -86,7 +86,7 @@ def test_f4():
 
 def test_f5():
     '''Define a function called `keyword_fn`, it should take a keyword argument
-       called `keyword`. The value of the keyword argument should be `None`'''
+       called `keyword`, with a default value of `None`'''
     
     assert hasattr(mycode, 'keyword_fn')    # does `keyword_fn` exist
     assert isfunction(mycode.keyword_fn)    # is `keyword_fn` a function?

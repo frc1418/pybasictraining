@@ -79,7 +79,7 @@ Functions & logic
 * f4 - `do_something` should return the result of `x1` times `x2`
 
 * f5 - Define a function called `keyword_fn`, it should take a keyword argument
-  called `keyword`. The value of the keyword argument should be `None`
+  called `keyword`, with a default value of `None`
 * f6 - If `keyword` is None, then `keyword_fn` should return the string 'No'.
   Otherwise, it should return the keyword argument plus `2`
 
