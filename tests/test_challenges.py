@@ -16,14 +16,6 @@ import mycode
 
 from inspect import cleandoc, getargspec, isfunction, ismodule
 
-
-#import pytest
-
-#@pytest.fixture()
-#def module():
-#    import something
-#    return something
-
 #
 # Starting out
 #
@@ -177,6 +169,216 @@ def test_m4():
     
     assert mycode.gonna_call_stuff(999) == 999*3        # see if gonna_call_stuff returns the right value
     assert some_library._called['multiply'] == True     # If not true, the multiply_by_2 function wasn't called
+
+#
+# Tuples
+#
+
+def test_t1():
+    '''Define a variable `t1`, and make it equal to an empty tuple'''
+
+    assert isinstance(mycode.t1, tuple)     # is it a tuple?
+    assert len(mycode.t1) == 0              # it shouldn't have any elements
+
+def test_t2():
+    '''Define a variable `t2`, and make it equal to a tuple containing the value False'''
+
+    assert isinstance(mycode.t2, tuple)     # is it a tuple?
+    assert len(mycode.t2) == 1              # tuple of length 1
+    assert mycode.t2[0] is False            # 0th element is False
+
+def test_t3():
+    '''Define a variable `t3`, and make it equal to a tuple containing 32000 elements'''
+
+    assert isinstance(mycode.t3, tuple)     # is it a tuple?
+    assert len(mycode.t3) == 32000          # is it 32000 elements long?
+
+def test_t4():
+    '''Define a variable `t4`, and make it equal to a tuple containing the values 'foo', 1,
+       and False in it (in that order).'''
+
+    assert isinstance(mycode.t4, tuple)     # is it a tuple?
+    assert mycode.t4[0] == 'foo'            # check 0th element
+    assert mycode.t4[1] is 1                # check 1st element
+    assert mycode.t4[2] is False            # check 2nd element
+
+def test_t5():
+    '''Define a variable `t5`, and make it equal to the 0th element of `t4`'''
+
+    assert mycode.t5 is mycode.t4[0]        # t must be equal to the 0th element of t4
+
+def test_t6():
+    '''Define a function called `measure_tuple`, that takes a single parameter'''
+
+    assert isfunction(mycode.measure_tuple)  # is there a function called 'measure_tuple'?
+    (args, varargs, keywords, defaults) = getargspec(mycode.measure_tuple)
+    
+    assert len(args) == 1   # does `measure_tuple` take a single parameter?
+
+
+def test_t7():
+    '''`measure_tuple` should return the number of elements present in the tuple'''
+
+    assert mycode.measure_tuple(()) == 0
+
+    for i in range(10):
+        assert mycode.measure_tuple((True,)*i) == i
+
+
+def test_t8():
+    '''Define a function called `sum_tuple`, that takes a single parameter'''
+
+    assert isfunction(mycode.sum_tuple)  # is there a function called 'sum_tuple'?
+    (args, varargs, keywords, defaults) = getargspec(mycode.sum_tuple)
+    
+    assert len(args) == 1   # does `sum_tuple` take a single parameter?
+
+def test_t9():
+    '''In `sum_tuple`, the parameter is a tuple. If there are 5 elements in
+       the tuple, return the sum of the elements in the tuple. Otherwise, return None.'''
+
+    assert mycode.sum_tuple(()) == None
+    assert mycode.sum_tuple((1,)) == None
+    assert mycode.sum_tuple((1,2,3,4,)) == None
+    assert mycode.sum_tuple((1,)*3000) == None
+    assert mycode.sum_tuple((1,2,3,4,5)) == 15
+    
+#
+# Lists
+#
+
+def test_l1():
+    '''Define a variable `l1`, and make it equal to an empty list'''
+
+    assert isinstance(mycode.l1, list)      # is it a list?
+    assert len(mycode.l1) == 0              # it shouldn't have any elements
+
+def test_l2():
+    '''Define a variable `l2`, and make it equal to a list containing the value False'''
+
+    assert isinstance(mycode.l2, list)     # is it a list?
+    assert len(mycode.l2) == 1              # list of length 1
+    assert mycode.l2[0] is False            # 0th element is False
+
+def test_l3():
+    '''Define a variable `l3`, and make it equal to a list containing 32000 elements'''
+
+    assert isinstance(mycode.l3, list)      # is it a list?
+    assert len(mycode.l3) == 32000          # is it 32000 elements long?
+
+def test_l4():
+    '''Define a variable `l4`, and make it equal to a list containing the values 'foo', 1,
+       and False in it (in that order).'''
+
+    assert isinstance(mycode.l4, list)      # is it a list?
+    assert mycode.l4[0] == 'foo'            # check 0th element
+    assert mycode.l4[1] is 1                # check 1st element
+    assert mycode.l4[2] is False            # check 2nd element
+
+def test_l5():
+    '''Define a variable `l5`, and make it equal to the 0th element of `l4`'''
+
+    assert mycode.l5 is mycode.l4[0]        # l5 must be equal to the 0th element of l4
+
+def test_l6():
+    '''Define a function called `measure_list`, that takes a single parameter'''
+
+    assert isfunction(mycode.measure_list)  # is there a function called 'measure_list'?
+    (args, varargs, keywords, defaults) = getargspec(mycode.measure_list)
+    
+    assert len(args) == 1   # does `measure_list` take a single parameter?
+
+
+def test_l7():
+    '''`measure_list` should return the number of elements present in the list'''
+
+    assert mycode.measure_list(()) == 0
+
+    for i in range(10):
+        assert mycode.measure_list((True,)*i) == i
+
+
+def test_l8():
+    '''Define a function called `sum_list`, that takes a single parameter'''
+
+    assert isfunction(mycode.sum_list)  # is there a function called 'sum_list'?
+    (args, varargs, keywords, defaults) = getargspec(mycode.sum_list)
+    
+    assert len(args) == 1   # does `sum_list` take a single parameter?
+
+def test_l9():
+    '''In `sum_list`, the parameter is a list. If there are 5 elements in
+       the list, return the sum of the elements in the list. Otherwise, return None.'''
+
+    assert mycode.sum_list(()) == None
+    assert mycode.sum_list((1,)) == None
+    assert mycode.sum_list((1,2,3,4,)) == None
+    assert mycode.sum_list((1,)*3000) == None
+    assert mycode.sum_list((1,2,3,4,5)) == 15
+
+
+def test_l10():
+    '''Define a function called `wopit` that takes a single parameter, and
+      returns None. The parameter is a list. Add the first element of the list to the
+      end of the list. Do nothing if the list is empty.'''
+
+    x = random.random()
+    l10_1 = [x, 2, 3]
+    mycode.wopit(l10_1)
+    assert l10_1 == [x, 2, 3, x]
+
+    l10_2 = []
+    mycode.wopit(l10_2)
+    assert l10_2 == []
+
+def test_l11():
+    '''Define a function called `bopit` that takes a single parameter, and
+       returns None. The parameter is a list. Remove an item from the end of the list.
+       Do nothing if the list is empty.'''
+
+    l11_1 = [1,2,3]
+    mycode.bopit(l11_1)
+    assert l11_1 == [1,2]
+
+    l11_2 = []
+    mycode.bopit(l11_2)
+    assert l11_2 == []
+
+def test_l12():
+    '''Define a function called `mopit` that takes a single parameter, and
+       returns None. The parameter is a list. Remove an item from the beginning
+       of the list. Do nothing if the list is empty.'''
+
+    l12_1 = [1,2,3]
+    mycode.mopit(l12_1)
+    assert l12_1 == [2,3]
+
+    l12_2 = []
+    mycode.mopit(l12_2)
+    assert l12_2 == []
+
+def test_l13():
+    '''Define a function called `zopit` that takes a single parameter. The
+       parameter is a list. Return True if there is an element in the list that is
+       equal to the string `item`, and the element position in the list is greater
+       than 100.'''
+
+    for list_len in range(200):
+        for pos_item in range(list_len):
+            l = [False] * list_len
+
+            # for giggles, sometimes the item isn't there
+            has_item = (pos_item % 2 == 0)
+            if has_item:
+                l[pos_item] = 'item'
+
+            r = mycode.zopit(l)
+
+            if has_item and pos_item > 100:
+                assert r is True
+            else:
+                assert r is False
+
 
 #
 # Classes & Objects

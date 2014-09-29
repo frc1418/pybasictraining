@@ -5,6 +5,10 @@ This is a repository that we'll use as a tool to teach you python. This is an
 interactive learning experiment that gives you a number of challenges to
 beat. To pass the challenges you will need to write python code.
 
+Once you have passed these challenges, and understand the concepts required
+for passing the challenges, you should have a reasonable grasp of how to do
+a lot of basic things in python.
+
 Preparation
 ===========
 
@@ -74,12 +78,16 @@ Creating files
 Variables
 ---------
 
+The code for these challenges should be added to `mycode.py`
+
 * v1 - Define a variable named `x`, and make it equal to the number `3`
 * v2 - Define a variable named `s`, and make it a string that says `I am a string`
 * v3 - Define a variable named `b`, and make it equal to the boolean false value
 
 Functions & logic
 -----------------
+
+The code for these challenges should be added to `mycode.py`
 
 * f1 - Define a function called `do_something`
 * f2 - `do_something` should take two parameters, `x1` and `x2`
@@ -100,6 +108,8 @@ Functions & logic
 Modules
 -------
 
+The code for these challenges should be added to `mycode.py`
+
 * m1 - Import the library called `some_library`
 * m2 - Call the `i_am_a_teapot` function inside of `some_library`, store its
   return value in a variable called `teapot`
@@ -109,65 +119,73 @@ Modules
   in the `some_library` library with the first parameter equal to the first
   parameter of the `gonna_call_stuff` function, and return the value returned by
   `multiply_by_2`
-   
-Classes & objects
------------------
-
-* c1 - define your own class
-* c3 - add a constructor to your class
-* c - in the constructor, 
-* cX - add a method to your class, must return None
-* c4 - add an attribute to your class
-* c5 - do something with the attribute inside a method
-* c6 - access the same attribute from outside the class
-
-
-* c2 - create an instance of your class
-* 
-
-concepts I'm trying to communicate here:
-- What the self variable is
-- Calling functions on an object
-- Creating multiple instances of an object, and their 'self'
-  are different.. 
-
-
-TODO
 
 Tuples
 ------
 
-* t1 - Define a variable 't1', and make it equal to an empty tuple
-* t2 - Define a variable 't2', and make it equal to a tuple with the values
-  'foo', 1, and False in it (in that order).
-* t3 - Define a variable 't3', and make it equal to the second element
+The code for these challenges should be added to `mycode.py`
 
-* t4 - Define a function called `measure_tuple`, that takes a single parameter
-* t5 - `measure_tuple` should return the number of elements present in the
+* t1 - Define a variable `t1`, and make it equal to an empty tuple
+* t2 - Define a variable `t2`, and make it equal to a tuple containing the value False
+* t3 - Define a variable `t3`, and make it equal to a tuple containing 32000 elements
+* t4 - Define a variable `t4`, and make it equal to a tuple containing the values
+  'foo', 1, and False in it (in that order).
+* t5 - Define a variable `t5`, and make it equal to the 0th element of `t4`
+
+* t6 - Define a function called `measure_tuple`, that takes a single parameter
+* t7 - `measure_tuple` should return the number of elements present in the
   tuple
   
-* t6 - Define a function called `sum_tuple`, that takes a single parameter
-* t7 - In `sum_tuple`, the parameter is a tuple. If there are 5 elements in
+* t8 - Define a function called `sum_tuple`, that takes a single parameter
+* t9 - In `sum_tuple`, the parameter is a tuple. If there are 5 elements in
   the tuple, return the sum of the elements in the tuple. Otherwise, return None.
-
 
 Lists
 -----
 
-TODO
+The code for these challenges should be added to `mycode.py`
+
+* l1 - Define a variable `l1`, and make it equal to an empty list
+* l2 - Define a variable `l2`, and make it equal to a list containing the value False
+* l3 - Define a variable `l3`, and make it equal to a list containing 32000 elements
+* l4 - Define a variable `l4`, and make it equal to a list containing the values
+  'foo', 1, and False in it (in that order).
+* l5 - Define a variable `l5`, and make it equal to the 0th element of `l4`
+
+* l6 - Define a function called `measure_list`, that takes a single parameter
+* l7 - `measure_list` should return the number of elements present in the
+  list
+  
+* l8 - Define a function called `sum_list`, that takes a single parameter
+* l9 - In `sum_list`, the parameter is a list. If there are 5 elements in
+  the list, return the sum of the elements in the list. Otherwise, return None.
+
+* l10 - Define a function called `wopit` that takes a single parameter, and
+  returns None. The parameter is a list. Add the first element of the list to the
+  end of the list. Do nothing if the list is empty.
+* l11 - Define a function called `bopit` that takes a single parameter, and
+  returns None. The parameter is a list. Remove an item from the end of the list.
+  Do nothing if the list is empty.
+* l12 - Define a function called `mopit` that takes a single parameter, and
+  returns None. The parameter is a list. Remove an item from the beginning of the list.
+  Do nothing if the list is empty.
+
+* l13 - Define a function called `zopit` that takes a single parameter. The
+  parameter is a list. Return True if there is an element in the list that is
+  equal to the string `item`, and the element position in the list is greater
+  than 100.
+
 
 Dictionaries
 ------------
 
-- Create a variable d1 as an empty dictionary
-- Create a variable d2 as an empty dictionary
-- Add the
-- Add a tuple
+TODO
 
-- define a function that takes a single parameter.
-- The parameter is a dictionary. if the dictionary has the
-  key 'stuff' in it, return the value associated with the key.
-  Otherwise, return None.
+Classes & objects
+-----------------
+
+TODO
+
 
 Exceptions
 ----------
