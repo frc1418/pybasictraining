@@ -14,7 +14,7 @@ some_library._retval['teapot'] = _teapot_ret
 # in the src directory, or there is an error in the file
 import mycode
 
-from inspect import cleandoc, getargspec, isfunction, ismodule
+from inspect import cleandoc, getargspec, isclass, isfunction, ismethod, ismodule
 
 #
 # Starting out
@@ -427,6 +427,140 @@ def test_d4():
 
 #
 # Classes & Objects
+#
+
+def test_c1():
+    '''Define a class called `MyClass`'''
+
+    assert isclass(mycode.MyClass)  # has the class been defined?
+
+def test_c2():
+    '''Add a class variable to `MyClass` called `clsvar`, equal to the value 3'''
+
+    assert hasattr(mycode.MyClass, 'clsvar')  # class variable exist?
+    assert mycode.MyClass.clsvar is 3         # is it 3?
+
+def test_c3():
+    """Define a constructor method for `MyClass`, taking a single parameter.
+       The parameter must be set as an instance variable (also called an 'attribute')
+       called 'instvar'. If the parameter is equal to the string 'Hi', then the
+       'instvar' attribute must be set to 'Hello'"""
+
+    assert not hasattr(mycode.MyClass, 'instvar') # make sure it's not a class variable
+
+    # check to see if instructions were followed
+    for i in range(10):
+        m = mycode.MyClass(i)
+        assert m.instvar == i
+
+    m = mycode.MyClass('Hi')
+    assert m.instvar == 'Hello'     # Follow instructions?
+
+def test_c4():
+    '''In `MyClass`, define a method called 'add5', which takes a single
+      parameter. The method must add the number 5 to the parameter, and add the
+      result to the instance parameter 'instvar'. If `instvar` is greater than
+      100, the method must return True. Return None otherwise.'''
+
+    assert isfunction(mycode.MyClass.add5)    # does add5 exist and is a method?
+
+    m1 = mycode.MyClass(0)
+
+    r = m1.add5(5)
+    assert r == False               # check result
+    assert m1.instvar == 10         # check that the operation happened
+
+    r = m1.add5(86)
+    assert r == True                # check result
+    assert m1.instvar == 101        # check that the operation happened
+
+    r = m1.add5(0)
+    assert r == True                # check result
+    assert m1.instvar == 106        # check that the expected operation happened
+
+    # Here's a better test
+    for i in range(100):
+        for j in range(100):
+            m2 = mycode.MyClass(i)
+            r = m2.add5(j)
+
+            assert m2.instvar == i + j + 5 # first check the value
+
+            # next check the result
+            if i + j + 5 > 100:
+               assert r == True
+            else:
+                assert r == False
+
+def test_c5():
+    '''In `MyClass`, define a property method called `prop` which must always
+       return the string 'hi'.'''
+
+    assert hasattr(mycode.MyClass, 'prop')              # does the 'prop' property exist?
+    assert isinstance(mycode.MyClass.prop, property)    # is it a property?
+
+    m = mycode.MyClass(1)
+    assert m.prop == 'hi'
+
+def test_c6():
+    '''In `MyClass`, when the `prop` property is set, it must set an instance
+       variable called '_prop' to the value it was set to'''
+
+    assert hasattr(mycode.MyClass, 'prop')              # does the 'prop' property exist?
+    assert isinstance(mycode.MyClass.prop, property)    # is it a property?
+
+    m = mycode.MyClass(1)
+    assert m.prop == 'hi'
+    m.prop = 1234
+    assert hasattr(m, '_prop')      # did the value get set to the correct attribute?
+    assert m._prop == 1234          # is the value of _prop correct?
+    assert m.prop == 'hi'
+
+    # serious testing
+    for i in range(10000):
+        m = mycode.MyClass(1)
+        m.prop = i
+        assert m._prop == i
+
+def test_c7():
+    '''In `MyClass`, define two functions, `a` (taking a single parameter)
+       and `b` (taking no parameters). When `b` is called, it must return the value
+       that was passed to the `a` function. If the `a` function was never called,
+       `b` must return None. '''
+
+    m1 = mycode.MyClass(1)
+
+    val = 'string'
+    m1.a(val)
+    assert m1.b() is val     # make sure the return value is correct
+
+    m2 = mycode.MyClass(2)
+    assert m2.b() == None    # did you follow the rules?
+
+    for i in range(10000):        
+        m1.a(i)
+        assert m1.b() == i   # make sure the return value is correct
+
+
+
+def test_c8():
+    '''Create an instance of `MyClass` and assign it to a variable called
+      `mine`. Create another instance of `MyClass` and assign it to a variable
+      called `mine2`'''
+
+    assert hasattr(mycode, 'mine')
+    assert hasattr(mycode, 'mine2')
+
+    assert isinstance(mycode.mine, mycode.MyClass)  # is it an instance?
+    assert isinstance(mycode.mine2, mycode.MyClass) # is it an instance?
+
+    assert mycode.mine is not mycode.mine2  # not the same instance
+    assert mycode.mine.instvar is mycode.mine.instvar # must be the same exact string
+
+
+
+#
+# State Machine
 #
 
 # TODO

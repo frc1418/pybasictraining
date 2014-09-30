@@ -197,7 +197,36 @@ The code for these challenges should be added to `mycode.py`
 Classes & objects
 -----------------
 
-TODO
+The code for these challenges should be added to `mycode.py`. When mentioning
+the number of parameters for class methods, the `self` parameter is not included
+in the count.
+
+* c1 - Define a class called `MyClass`
+* c2 - Add a class variable to `MyClass` called `clsvar`, equal to the value 3
+* c3 - Define a constructor method for `MyClass`, taking a single parameter.
+  The parameter must be set as an instance variable (also called an 'attribute')
+  called 'instvar'. If the parameter is equal to the string 'Hi', then the
+  'instvar' attribute must be set to 'Hello'
+* c4 - In `MyClass`, define a method called 'add5', which takes a single
+  parameter. The method must add the number 5 to the parameter, and add the
+  result to the instance parameter 'instvar'. If `instvar` is greater than
+  100, the method must return True. Return None otherwise.
+
+* c5 - In `MyClass`, define a property method called `prop` which must always
+  return the string 'hi'.
+* c6 - In `MyClass`, when the `prop` property is set, it must set an instance
+  variable called '_prop' to the value it was set to
+
+* c7 - In `MyClass`, define two functions, `a` (taking a single parameter)
+  and `b` (taking no parameters). When `b` is called, it must return the value
+  that was passed to the `a` function. If the `a` function was never called,
+  `b` must return None. 
+
+* c8 - Create an instance of `MyClass`, with an initial argument of 'Hi' and
+  assign it to a variable called `mine`. Create another instance of `MyClass`
+  and assign it to a variable called `mine2`. The value of the `instvar`
+  attribute on mine2 must be the same string that was passed to the `mine`
+  instance.
 
 
 Exceptions
