@@ -15,6 +15,7 @@ some_library._retval['teapot'] = _teapot_ret
 import mycode
 
 from inspect import cleandoc, getargspec, isclass, isfunction, ismethod, ismodule
+import pytest
 
 #
 # Starting out
@@ -563,7 +564,138 @@ def test_c8():
 # State Machine
 #
 
-# TODO
+def test_sm1():
+    '''Define a class called `StateMachine`'''
+
+    assert isclass(mycode.StateMachine)     # has the class been defined?
+
+def test_sm2():
+    '''The constructor for `StateMachine` will receive a single argument,
+       which is a string indicating which state to start in. A readonly property
+       of the `StateMachine` class called `state` must be defined, which will
+       return the string representing the current state.'''
+
+    assert isinstance(mycode.StateMachine.state, property)
+
+    sm = mycode.StateMachine('init')
+    assert sm.state == 'init'
+
+    with pytest.raises(AttributeError):
+        sm.state = 'foo'         # make sure the property can't be written
+
+    # try a bunch of random states
+    for i in range(10000):
+        sm = mycode.StateMachine(str(i))
+        assert sm.state == str(i)
+
+
+def test_sm3():
+    '''Define a method of `StateMachine` called `reset`. If this method
+       is called, the current state must be set to the 'init' state.'''
+
+    for i in range(10000):
+        sm = mycode.StateMachine(str(i))
+        assert sm.state == str(i)
+
+        sm.reset()
+        assert sm.state == 'init'
+
+    # test this once
+    
+def run_the_test(sm, initial_state):
+    '''function to test the state machine'''
+
+    assert sm.state == initial_state
+
+    # test the initial state
+    if initial_state == 'init':
+        for i in range(10):
+            ret = sm.process(False)
+            assert ret == False
+            assert sm.state == 'init'
+
+            yield
+
+        # test the running state
+        ret = sm.process(True)
+        assert ret == True
+
+    if initial_state in ['init', 'running']:
+        assert sm.state == 'running'
+
+        for i in range(19):
+            if i % 2 == 0:
+                param = True
+            else:
+                param = False
+
+            ret = sm.process(param)
+
+            assert sm.state == 'running'    
+            assert ret == True              # when running, always True
+
+            yield
+
+        ret = sm.process(True)
+        assert ret == True
+        assert sm.state == 'slowing'
+
+    # test the slowing state
+    for i in range(9):
+        if i % 2 == 0:
+            param = True
+        else:
+            param = True
+
+        ret = sm.process(param)
+
+        assert sm.state == 'slowing'
+        assert ret == True
+
+        yield
+
+    ret = sm.process(True)
+    assert sm.state == 'init'   # did it reset?
+    assert ret == True          # the param is True, state is 'init', must return True
+
+
+def test_sm4():
+    '''Define a method of `StateMachine` called `process`. It must take a
+       single parameter (referred to below as `sensed`), which can be True or False.
+       The `process` method will be called over and over again, and must follow
+       these rules:
+       * While in the 'init' state, the function must return the value of the
+         `sensed` parameter. If the `sensed` parameter is True, the state must
+         be set to 'running'.
+       * While in the 'running' state, the function must return 'True'. If
+         the function has been called 20 times in the 'running' state, the 
+         current state must be set to 'slowing'.
+       * While in the 'slowing' state, the function must return 'True'. If
+         the function has been called 10 times in the 'slowing' state, the
+         current state must be set to 'init'.'''
+
+    # run the state machine 10 times to see if it works
+    sm = mycode.StateMachine('init')
+    for cnt in range(10):
+        for _ in run_the_test(sm, 'init'):
+            pass
+
+def test_sm5():
+    '''This challenge is a more comprehensive test of the state machine'''
+
+    for init_state in ['init', 'running', 'slowing']:
+        sms = [mycode.StateMachine(init_state) for j in range(10)]
+        gens = [run_the_test(sm, init_state) for sm in sms]
+
+        dead = [False]*10
+
+        while False in dead:
+            for i, g in enumerate(gens):
+                try:
+                    if not dead[i]:
+                        next(g)
+                except StopIteration:
+                    dead[i] = True
 
 #
 # Exceptions

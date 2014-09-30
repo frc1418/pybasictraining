@@ -229,6 +229,35 @@ in the count.
   instance.
 
 
+State Machine
+-------------
+
+The code for these challenges should be added to `mycode.py`. When mentioning
+the number of parameters for class methods, the `self` parameter is not included
+in the count.
+
+* sm1 - Define a class called `StateMachine`
+* sm2 - The constructor for `StateMachine` will receive a single argument,
+  which is a string indicating which state to start in. A readonly property
+  of the `StateMachine` class called `state` must be defined, which will
+  return the string representing the current state.
+* sm3 - Define a method of `StateMachine` called `reset`. If this method
+  is called, the current state must be set to the 'init' state.
+* sm4 - Define a method of `StateMachine` called `process`. It must take a
+  single parameter (referred to below as `sensed`), which can be True or False.
+  The `process` method will be called over and over again, and must follow
+  these rules:
+  * While in the 'init' state, the function must return the value of the
+    `sensed` parameter. If the `sensed` parameter is True, the state must
+    be set to 'running'.
+  * While in the 'running' state, the function must return 'True'. If
+    the function has been called 20 times in the 'running' state, the 
+    current state must be set to 'slowing'.
+  * While in the 'slowing' state, the function must return 'True'. If
+    the function has been called 10 times in the 'slowing' state, the
+    current state must be set to 'init'.
+* sm5 - This challenge is a more comprehensive test of the state machine
+
 Exceptions
 ----------
 
