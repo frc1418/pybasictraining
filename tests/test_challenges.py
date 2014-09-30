@@ -379,6 +379,51 @@ def test_l13():
             else:
                 assert r is False
 
+#
+# Dictionaries
+#
+
+def test_d1():
+    '''Define a variable `d1`, and make it equal to an empty dictionary'''
+
+    assert isinstance(mycode.d1, dict)      # is it a dictionary?
+    assert len(mycode.d1.keys()) == 0       # is it empty?
+
+def test_d2():
+    '''Define a variable `d2`, ane make it a dictionary with the following
+    key/value pairs: key: 'k1', value: 'item'; key: 'k2', value: a tuple with
+    the elements 1 and 2. '''
+
+    assert isinstance(mycode.d2, dict)      # is it a dictionary?
+    assert mycode.d2.get('k1') == 'item'    # k1 is an item?
+
+    t = mycode.d2.get('k2')                 # k2 is a tuple?
+    assert isinstance(t, tuple)
+    assert len(t) == 2
+    assert t[0] is 1
+    assert t[1] is 2
+
+def test_d3():
+    '''Define a variable `d3` that is equal to the value stored in the
+    dictionary with key `k2`'''
+
+    assert mycode.d3 is mycode.d2.get('k2')
+
+def test_d4():
+    '''Define a function called `superd` that takes a single parameter. The
+      parameter is a dictionary. Add 10000 elements to the dictionary, with the
+      keys numbers 1 - 10000. The values associated with each key is the key as
+      a string value.'''
+
+    d = dict()
+    mycode.superd(d)
+
+    assert len(d) == 10000      # does the dictionary have the right number of elements?
+
+    for i in range(1, 10000):
+        assert i in d           # does the key exist?
+        assert d[i] == '%s' % i # is is the right value?
+
 
 #
 # Classes & Objects

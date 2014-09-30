@@ -179,7 +179,20 @@ The code for these challenges should be added to `mycode.py`
 Dictionaries
 ------------
 
-TODO
+The code for these challenges should be added to `mycode.py`
+
+* d1 - Define a variable `d1`, and make it equal to an empty dictionary
+* d2 - Define a variable `d2`, ane make it a dictionary with the following
+  key/value pairs: key: 'k1', value: 'item'; key: 'k2', value: a tuple with
+  the elements 1 and 2. 
+* d3 - Define a variable `d3` that is equal to the value stored in the
+  dictionary with key `k2`
+
+* d4 - Define a function called `superd` that takes a single parameter. The
+  parameter is a dictionary. Add 10000 elements to the dictionary, with the
+  keys numbers 1 - 10000. The values associated with each key is the key as
+  a string value.
+
 
 Classes & objects
 -----------------
