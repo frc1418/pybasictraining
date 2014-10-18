@@ -14,9 +14,10 @@ Preparation
 
 You need to have the following things installed:
 
-* [Python 3](https://www.python.org/downloads/release/python-341/)
-* py.test (If you have [pip installed](http://pip.readthedocs.org/en/latest/installing.html),
-  you can `pip install pytest`)
+* [Python 3.4](https://www.python.org/downloads/release/python-342/) (this requires admin access)
+* The `py.test` python module
+  * If you have admin access, install via `sudo pip3 install pytest`
+  * If you don't, you can install via `pip3 install --user pytest`
   
 Currently this is geared towards running the tests on Linux/OSX. At some
 point I might add Windows support too.
