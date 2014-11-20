@@ -134,8 +134,8 @@ The code for these challenges should be added to `mycode.py`
 * t5 - Define a variable `t5`, and make it equal to the 0th element of `t4`
 
 * t6 - Define a function called `measure_tuple`, that takes a single parameter
-* t7 - `measure_tuple` should return the number of elements present in the
-  tuple
+* t7 - The first parameter of `measure_tuple` is a tuple. The function should
+  return the number of elements present in the tuple
   
 * t8 - Define a function called `sum_tuple`, that takes a single parameter
 * t9 - In `sum_tuple`, the parameter is a tuple. If there are 5 elements in
