@@ -248,13 +248,13 @@ in the count.
   single parameter (referred to below as `sensed`), which can be True or False.
   The `process` method will be called over and over again, and must follow
   these rules:
-  * While in the 'init' state, the function must return the value of the
+  * If in the 'init' state, the function must return the value of the
     `sensed` parameter. If the `sensed` parameter is True, the state must
     be set to 'running'.
-  * While in the 'running' state, the function must return 'True'. If
+  * If in the 'running' state, the function must return 'True'. If
     the function has been called 20 times in the 'running' state, the 
     current state must be set to 'slowing'.
-  * While in the 'slowing' state, the function must return 'True'. If
+  * If in the 'slowing' state, the function must return 'True'. If
     the function has been called 10 times in the 'slowing' state, the
     current state must be set to 'init'.
 * sm5 - This challenge is a more comprehensive test of the state machine
