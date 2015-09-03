@@ -3,7 +3,7 @@
 setlocal
 
 cd %~dp0\tests
-set PYTHONPATH="..\src"
+set PYTHONPATH=..\src
 py -3 -m pytest -l %*
 
 endlocal
