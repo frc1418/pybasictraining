@@ -15,6 +15,12 @@ Preparation
 Install the requirements
 ------------------------
 
+One of the really useful things about python is that you can write code that
+behaves the same regardless of which platform you're running it on. As such,
+the challenges should function the same regardless of whether you're using
+Windows or OSX or Linux. However, each platform will require slightly different
+steps to install the necessary requirements.
+
 ### OSX/Linux
 
 You need to have the following things installed:
