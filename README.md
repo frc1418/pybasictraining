@@ -44,7 +44,7 @@ Get the code
 You need to clone this git repository somewhere on your computer. You can use
 eclipse to do this, or open up a terminal and run the following:
 
-  git clone https://github.com/frc1418/pybasictraining.git
+    git clone https://github.com/frc1418/pybasictraining.git
 
 About the challenges
 --------------------
