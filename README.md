@@ -38,7 +38,7 @@ Get the code
 You need to clone this git repository somewhere on your computer. You can use
 eclipse to do this, or open up a terminal and run the following:
 
-	git clone https://github.com/frc1418/pybasictraining.git
+  git clone https://github.com/frc1418/pybasictraining.git
 
 About the challenges
 --------------------
@@ -65,19 +65,19 @@ For help using the terminal, see [this resource](http://team1418.org/wiki/Comman
 There are two ways to run the challenges. If you think your code can beat ALL
 of the challenges, then you can do the following:
 
-	OSX/Linux: ./run_all.sh
+  OSX/Linux: ./run_all.sh
   Windows:   run_all.bat
 
 However, running all the challenges can be a bit confusing and give you a lot
 of errors that you don't care about when concentrating on beating the current
 challenge. To run a single challenge, do this instead:
 
-	OSX/Linux: ./run_single.sh CHALLENGE
+  OSX/Linux: ./run_single.sh CHALLENGE
   Windows    run_single.bat CHALLENGE
-	
+  
 So for example, to run challenge `v1` on OSX or Linux, you would do this:
 
-	./run_single.sh v1
+  ./run_single.sh v1
 
 Whereas on Windows you would do this:
 
