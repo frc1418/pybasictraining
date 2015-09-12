@@ -12,15 +12,25 @@ a lot of basic things in python.
 Preparation
 ===========
 
+Install the requirements
+------------------------
+
+### OSX/Linux
+
 You need to have the following things installed:
 
 * [Python 3.4](https://www.python.org/downloads/release/python-342/) (this requires admin access)
 * The `py.test` python module
   * If you have admin access, install via `sudo pip3 install pytest`
   * If you don't, you can install via `pip3 install --user pytest`
-  
-Currently this is geared towards running the tests on Linux/OSX. At some
-point I might add Windows support too.
+
+### Windows
+
+You need to have the following things installed:
+
+* [Python 3.4](https://www.python.org/downloads/release/python-342/) (this requires admin access)
+* The `py.test` python module
+  * At a command prompt, `py -3 -m pip install pytest`
 
 Get the code
 ------------
@@ -33,9 +43,9 @@ eclipse to do this, or open up a terminal and run the following:
 About the challenges
 --------------------
 
-In [the challenges](#the-challenges) section, each bullet point is a challenge you must complete.
-The name of the challenge is listed first, followed by the description of
-the challenge.
+In [the challenges](#the-challenges) section, each bullet point is a challenge
+you must complete. The name of the challenge is listed first, followed by the
+description of the challenge.
 
 Please keep in mind that there are generally many different ways you can get
 the challenge tests to pass, but typically each test is a simple step that
@@ -46,25 +56,32 @@ to complete the tests in order.
 Testing to see if you beat the challenges
 -----------------------------------------
 
-The challenges currently need to be run in the terminal. This means you
-need to open up a terminal and change directories to wherever you checked
-out the code. For help using the terminal, see [this resource](http://team1418.org/wiki/CommandLinePrimer).
+The challenges currently need to be run in the terminal/command line. This means
+you need to open up a terminal or cmd and change directories to wherever you
+checked out the code.
+
+For help using the terminal, see [this resource](http://team1418.org/wiki/CommandLinePrimer).
 
 There are two ways to run the challenges. If you think your code can beat ALL
 of the challenges, then you can do the following:
 
-	./run_all.sh
+	[OSX/Linux]: ./run_all.sh
+  [Windows]:   run_all.bat
 
 However, running all the challenges can be a bit confusing and give you a lot
 of errors that you don't care about when concentrating on beating the current
 challenge. To run a single challenge, do this instead:
 
-	./run_single.sh CHALLENGE
+	[OSX/Linux]: ./run_single.sh CHALLENGE
+  [Windows]    run_single.bat CHALLENGE
 	
-So for example, to run challenge `v1`, you would do this:
+So for example, to run challenge `v1` on OSX or Linux, you would do this:
 
 	./run_single.sh v1
 
+Whereas on Windows you would do this:
+
+  run_single.bat v1
 
 Should be simple enough!
 
@@ -275,6 +292,4 @@ If you're having problems
 Most of the things that we're doing here is pretty simple, and google should
 be able to point you to answers. Often, it will point you at [Stack Overflow](http://stackoverflow.com),
 which is a really excellent resource for lots of programming questions.
-
-
 
