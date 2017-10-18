@@ -234,7 +234,7 @@ in the count.
 * c4 - In `MyClass`, define a method called 'add5', which takes a single
   parameter. The method must add the number 5 to the parameter, and add the
   result to the instance parameter 'instvar'. If `instvar` is greater than
-  100, the method must return True. Return None otherwise.
+  100, the method must return True. Return True otherwise.
 
 * c5 - In `MyClass`, define a property method called `prop` which must always
   return the string 'hi'.

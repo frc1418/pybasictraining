@@ -461,7 +461,7 @@ def test_c4():
     '''In `MyClass`, define a method called 'add5', which takes a single
       parameter. The method must add the number 5 to the parameter, and add the
       result to the instance parameter 'instvar'. If `instvar` is greater than
-      100, the method must return True. Return None otherwise.'''
+      100, the method must return True. Return False otherwise.'''
 
     assert isfunction(mycode.MyClass.add5)    # does add5 exist and is a method?
 
