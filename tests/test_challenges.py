@@ -362,7 +362,7 @@ def test_l13():
     '''Define a function called `zopit` that takes a single parameter. The
        parameter is a list. Return True if there is an element in the list that is
        equal to the string `item`, and the element position in the list is greater
-       than 100.'''
+       than 100. Otherwise, return False.'''
 
     for list_len in range(200):
         for pos_item in range(list_len):
