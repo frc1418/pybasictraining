@@ -545,9 +545,11 @@ def test_c7():
 
 
 def test_c8():
-    '''Create an instance of `MyClass` and assign it to a variable called
-      `mine`. Create another instance of `MyClass` and assign it to a variable
-      called `mine2`'''
+    '''Create an instance of `MyClass`, with an initial argument of 'Hi' and
+       assign it to a variable called `mine`. Create another instance of `MyClass`
+       and assign it to a variable called `mine2`. The value of the `instvar`
+       attribute on mine2 must be the same string that was passed to the `mine`
+       instance.'''
 
     assert hasattr(mycode, 'mine')
     assert hasattr(mycode, 'mine2')
