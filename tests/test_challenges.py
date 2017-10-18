@@ -362,7 +362,7 @@ def test_l13():
     '''Define a function called `zopit` that takes a single parameter. The
        parameter is a list. Return True if there is an element in the list that is
        equal to the string `item`, and the element position in the list is greater
-       than 100.'''
+       than 100. Otherwise, return False.'''
 
     for list_len in range(200):
         for pos_item in range(list_len):
@@ -461,7 +461,7 @@ def test_c4():
     '''In `MyClass`, define a method called 'add5', which takes a single
       parameter. The method must add the number 5 to the parameter, and add the
       result to the instance parameter 'instvar'. If `instvar` is greater than
-      100, the method must return True. Return None otherwise.'''
+      100, the method must return True. Return False otherwise.'''
 
     assert isfunction(mycode.MyClass.add5)    # does add5 exist and is a method?
 
@@ -545,9 +545,11 @@ def test_c7():
 
 
 def test_c8():
-    '''Create an instance of `MyClass` and assign it to a variable called
-      `mine`. Create another instance of `MyClass` and assign it to a variable
-      called `mine2`'''
+    '''Create an instance of `MyClass`, with an initial argument of 'Hi' and
+       assign it to a variable called `mine`. Create another instance of `MyClass`
+       and assign it to a variable called `mine2`. The value of the `instvar`
+       attribute on mine2 must be the same string that was passed to the `mine`
+       instance.'''
 
     assert hasattr(mycode, 'mine')
     assert hasattr(mycode, 'mine2')

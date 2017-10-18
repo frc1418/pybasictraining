@@ -197,7 +197,7 @@ The code for these challenges should be added to `mycode.py`
 * l13 - Define a function called `zopit` that takes a single parameter. The
   parameter is a list. Return True if there is an element in the list that is
   equal to the string `item`, and the element position in the list is greater
-  than 100.
+  than 100. Otherwise, return False.
 
 
 Dictionaries
@@ -234,7 +234,7 @@ in the count.
 * c4 - In `MyClass`, define a method called 'add5', which takes a single
   parameter. The method must add the number 5 to the parameter, and add the
   result to the instance parameter 'instvar'. If `instvar` is greater than
-  100, the method must return True. Return None otherwise.
+  100, the method must return True. Return False otherwise.
 
 * c5 - In `MyClass`, define a property method called `prop` which must always
   return the string 'hi'.
